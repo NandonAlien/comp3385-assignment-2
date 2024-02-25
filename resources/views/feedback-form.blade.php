@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Feedback Form</h1>
-<form action ="{{url ('/send') }}" method="post">
+<form action = {{ url('/feedback/send')}} method="post" >
     @csrf
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,10 +23,10 @@
     </div>
     <div>
         <label for='comment'>Comments</label><br>
-        <textarea id="comment" name="comment">
+        <textarea id="comment" name="comment"></textarea>
     </div>
     
-    let us know what you think of our website<br>
+    Let us know what you think of our website.<br>
 
     <button type="submit"></button>
     

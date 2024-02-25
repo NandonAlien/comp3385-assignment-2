@@ -16,7 +16,8 @@ class Feedback extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public string $fullname,
+    public function __construct(
+    public string $fullname,
     public string $email,
     public string $comment)
     {
@@ -29,7 +30,7 @@ class Feedback extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address( $this->email, $this->fullname),
+            from: $this->email,
             subject: 'Feedback from ' . $this->fullname,
             );
            
