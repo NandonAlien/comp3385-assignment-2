@@ -3,6 +3,7 @@
 use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,8 @@ Route::get('/about', function () {
     return view('about');
 });
 Route::get('/feedback',[FeedbackController::class, 'create']);
+Route::get('/feedback/success',[FeedbackController::class, 'success']);
 Route::post('/feedback/send',[FeedbackController::class, 'send']);
+
 
 // Create additional Routes below
